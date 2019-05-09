@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+      <property>
+        <name>yarn.federation.enabled</name>
+        <value>true</value>
+      </property>
+      <property>
+        <name>yarn.resourcemanager.cluster-id</name>
+        <value>cluster1</value>
+      </property>
+      <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>ip-172-31-28-139</value>
+      </property>
+      <property>
+        <name>yarn.federation.state-store.class</name>
+        <value>org.apache.hadoop.yarn.server.federation.store.impl.ZookeeperFederationStateStore</value>
+      </property>
+      <property>
+        <name>hadoop.zk.address</name>
+        <!--<value>172.31.14.18:2181,172.31.12.76:2181,172.31.2.132:2181</value>-->
+        <value>172.31.28.139:2181,172.31.13.121:2181,172.31.7.110:2181</value>
+      </property>
+      <property>
+        <name>yarn.resourcemanager.epoch</name>
+        <value>1</value>
+      </property>
+      <property>
+        <name>yarn.nodemanager.amrmproxy.enabled</name>
+        <value>true</value>
+     </property>
+     <property>
+        <name>yarn.nodemanager.amrmproxy.interceptor-class.pipeline</name>
+        <value>org.apache.hadoop.yarn.server.nodemanager.amrmproxy.FederationInterceptor</value>
+    </property>
+    <property>
+        <name>yarn.client.failover-proxy-provider</name>
+        <value>org.apache.hadoop.yarn.server.federation.failover.FederationRMFailoverProxyProvider</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+</configuration>
